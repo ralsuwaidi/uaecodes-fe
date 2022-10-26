@@ -7,13 +7,25 @@ import { MdPlayArrow, MdHelp, MdAdd, MdCode } from "react-icons/md";
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import MatrixCard from "matrix-card";
-import "./logo.png";
+import logo from "./logo.png";
+import { Buffer } from "buffer";
 
 function LineOfCode() {
-  const [console, setConsole] = useState([
+  const [codeConsole, setCodeConsole] = useState([
     ">> " + "Console loaded...",
     ">> " + "Type your script above and click the green play button",
   ]);
+  const [message, setMessage] = useState('');
+
+  const coded = Buffer.from([69,83,82,65]);
+
+
+  const handleChange = event => {
+    setMessage(event.target.value);
+
+    console.log('value is:', event.target.value);
+  };
+
 
   const canvWidth = window.innerWidth - 20;
 
@@ -28,10 +40,10 @@ function LineOfCode() {
       >
         <Action
           text="UAE CODES"
-          style={{ backgroundColor: "gray", width: 35, height: 35 }}
+          style={{ backgroundColor: "white", width: 35, height: 35 }}
           onClick={() => window.location.replace("https://ai.gov.ae/uaecodes/")}
         >
-          <MdCode />
+          <img src={logo} style={{width: 20}}></img>
         </Action>
         <Action
           text="Help"
@@ -52,7 +64,7 @@ function LineOfCode() {
         event="click"
         style={{ right: 5, bottom: 24 }} // location
         mainButtonStyles={{ backgroundColor: "lime" }}
-        onClick={() => setConsole(">> Your function has beeen initiated")}
+        onClick={() => setCodeConsole(">> Your function has been initiated")}
       ></Fab>
 
       <Header />
@@ -64,7 +76,7 @@ function LineOfCode() {
         <div className="w-full">
           <MatrixCard
             id={"my-id-1"}
-            matrixText={"UAE CODES"}
+            matrixText={"UAE CODES" + coded.toString()}
             canvasSize={{ width: canvWidth, height: "300" }}
             delay={40}
             backgroundColor={"rgba(42, 40, 45, 0.2)"}
@@ -89,7 +101,7 @@ function LineOfCode() {
             <div>
               <Typewriter
                 options={{
-                  strings: console,
+                  strings: codeConsole,
                   autoStart: true,
                 }}
               />
