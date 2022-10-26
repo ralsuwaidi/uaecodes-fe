@@ -48,6 +48,7 @@ export default function TextEditor() {
             <input
               type="text"
               id="small-input"
+              placeholder="Type your text here..."
               class=" Yellow bg-gray-900 flex-1 rounded-lg border border-gray-900 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
             />
           <div>
