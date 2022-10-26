@@ -10,7 +10,7 @@ import MatrixCard from "matrix-card";
 
 function LineOfCode() {
   const [console, setConsole] = useState(
-    "Console loaded...Type your script above and click green play button"
+    [">> "+"Console loaded...",">> " + "Type your script above and click the green play button"]
   );
 
 
@@ -49,7 +49,7 @@ function LineOfCode() {
         event="click"
         style={{ right: 5, bottom: 24 }} // location
         mainButtonStyles={{ backgroundColor: "lime" }}
-        onClick={() => setConsole("Your function has beeen printed")}
+        onClick={() => setConsole(">> Your function has beeen initiated")}
       ></Fab>
 
       <Header />
@@ -83,10 +83,10 @@ function LineOfCode() {
               right: "0px",
             }}
           >
-            <div>
+            <div >
               <Typewriter
                 options={{
-                  strings: [">> " + console],
+                  strings: console,
                   autoStart: true,
                 }}
               />
