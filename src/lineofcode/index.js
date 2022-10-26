@@ -7,19 +7,18 @@ import { MdPlayArrow, MdHelp, MdAdd, MdCode } from "react-icons/md";
 import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import MatrixCard from "matrix-card";
+import "./logo.png";
 
 function LineOfCode() {
-  const [console, setConsole] = useState(
-    [">> "+"Console loaded...",">> " + "Type your script above and click the green play button"]
-  );
-
-
+  const [console, setConsole] = useState([
+    ">> " + "Console loaded...",
+    ">> " + "Type your script above and click the green play button",
+  ]);
 
   const canvWidth = window.innerWidth - 20;
 
   return (
     <div className="LOC flex flex-col h-screen">
-    
       <Fab
         icon={<MdAdd color="white" size={20} />} // main icon
         alwaysShowTitle={true} // always show color
@@ -37,7 +36,11 @@ function LineOfCode() {
         <Action
           text="Help"
           style={{ backgroundColor: "gray", width: 35, height: 35 }}
-          onClick={() => alert("Type any words to see them displayed in the console, this is called a print statement")}
+          onClick={() =>
+            alert(
+              "Type any words to see them displayed in the console, this is called a print statement"
+            )
+          }
         >
           <MdHelp />
         </Action>
@@ -56,7 +59,7 @@ function LineOfCode() {
       <TextEditor />
       <div
         style={{ backgroundColor: "#242424" }}
-        className="flex-1 h-full flex-grow pl-2 loc-mono text-sm Green"
+        className="flex-1 h-full flex-grow pl-2 loc-mono sm:text-sm Green"
       >
         <div className="w-full">
           <MatrixCard
@@ -83,7 +86,7 @@ function LineOfCode() {
               right: "0px",
             }}
           >
-            <div >
+            <div>
               <Typewriter
                 options={{
                   strings: console,
