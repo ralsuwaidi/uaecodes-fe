@@ -8,11 +8,16 @@ function LineOfCode() {
       <Header />
       <TextEditor />
       <div
-        style={{ backgroundColor: "#242424", color: "#50fa7b" }}
-        className="flex-1 h-full flex-grow pl-2 loc-mono text-sm"
+        style={{ backgroundColor: "#242424" }}
+        className="flex-1 h-full flex-grow pl-2 loc-mono text-sm Green"
       >
-        <p><span>&#62;</span> Console loaded...Type your script above and click green start button</p>
-        <p><span>&#62;</span> |</p>
+        <p>
+          <span>&#62;</span> Console loaded...Type your script above and click
+          green start button
+        </p>
+        <p>
+          <span>&#62;</span> |
+        </p>
       </div>
     </div>
   );
