@@ -3,27 +3,37 @@ import "./loc.css";
 import TextEditor from "./TextEditor";
 import "react-tiny-fab/dist/styles.css";
 import { Fab, Action } from "react-tiny-fab";
-import { MdPlayArrow } from "react-icons/md";
+import { MdPlayArrow, MdHelp, MdAdd } from "react-icons/md";
 
 function LineOfCode() {
   return (
     <div className="LOC flex flex-col h-screen">
       <Fab
-        icon={<MdPlayArrow />}
-        alwaysShowTitle={true}
+        icon={<MdAdd color="white" size={20} />} // main icon
+        alwaysShowTitle={true} // always show color
+        event="hover"
+        style={{ right: 15, bottom: 95, width: 35, height: 35 }} // location
+        mainButtonStyles={{ backgroundColor: "gray", width: 35, height: 35 }}
       >
-        // The Action components are the "buttons" that appear when the Fab is
-        open. You can use the out-of-the-box Action // component or you can use
-        a custom component of any type and style it any way that you'd like. The
-        "text" prop // is the popup label that appears when the Action component
-        is hovered.
-        <Action text="Email" />
-        <Action text="Help">
-          <i className="fa fa-help" />
+        <Action text="Email" 
+        style={{ backgroundColor: "gray", width: 35, height: 35 }}
+        />
+        <Action text="Help"
+        style={{ backgroundColor: "gray", width: 35, height: 35 }}
+        >
+          <MdHelp />
         </Action>
-        // Using a custom component for this one. See another example in
-        "example/src/index.js"
       </Fab>
+
+      <Fab
+        icon={<MdPlayArrow color="green" size={30} />} // main icon
+        alwaysShowTitle={true} // always show color
+        event="click"
+        style={{ right: 5, bottom: 24 }} // location
+        mainButtonStyles={{ backgroundColor: "lime" }}
+        onClick={() => console.log("Here is the action of FAB.")}
+        ></Fab>
+
       <Header />
       <TextEditor />
       <div
