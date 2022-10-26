@@ -1,5 +1,4 @@
-
-export default function TextEditor() {
+export default function TextEditor(props) {
   return (
     <div class="flex px-2 sm:text-sm loc-mono Comment">
       <div class="w-1/5">
@@ -31,13 +30,17 @@ export default function TextEditor() {
         </p>
         <br></br>
         <p>
-          # import statemenets like the one above are used to import needed functionality
+          # import statemenets like the one above are used to import needed
+          functionality
         </p>
         <p>
           # the below is a print statement, it prints what you want to show to
           the console
         </p>
-        <p># add the line you want to print inside the “” marks then click the green icon </p>
+        <p>
+          # add the line you want to print inside the “” marks then click the
+          green icon{" "}
+        </p>
         <br></br>
         <div className="flex items-center mt-2">
           <div>
@@ -45,12 +48,17 @@ export default function TextEditor() {
             <span>(</span>
             <span className="Yellow">"</span>
           </div>
-            <input
-              type="text"
-              id="small-input"
-              placeholder="Type your code here..."
-              class=" Yellow bg-gray-900 flex-1 rounded-lg border border-gray-900 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-            />
+
+          {/* input here  */}
+
+          <input
+            type="text"
+            id="small-input"
+            placeholder="Type your code here..."
+            onChange={props.handleChange}
+            maxLength="100"
+            class=" Yellow bg-gray-900 flex-1 rounded-lg border border-gray-900 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
+          />
           <div>
             <span className="Yellow">"</span>
             <span>)</span>
