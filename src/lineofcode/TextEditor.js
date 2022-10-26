@@ -32,11 +32,13 @@ export default function TextEditor() {
         </p>
         <br></br>
         <p>
+          # import statemenets like the one above are used to import needed functionality
+        </p>
+        <p>
           # the below is a print statement, it prints what you want to show to
           the console
         </p>
-        <br></br>
-        <p># add the line you want to print inside the “” marks </p>
+        <p># add the line you want to print inside the “” marks then click the green icon </p>
         <br></br>
         <div className="flex items-center mt-2">
           <div>

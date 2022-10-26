@@ -3,8 +3,8 @@ import "./loc.css";
 import TextEditor from "./TextEditor";
 import "react-tiny-fab/dist/styles.css";
 import { Fab, Action } from "react-tiny-fab";
-import { MdPlayArrow, MdHelp, MdAdd } from "react-icons/md";
-import { useState } from "react";
+import { MdPlayArrow, MdHelp, MdAdd, MdCode } from "react-icons/md";
+import React, { useState } from "react";
 import Typewriter from "typewriter-effect";
 import MatrixCard from "matrix-card";
 
@@ -14,8 +14,12 @@ function LineOfCode() {
   );
 
 
+
+  const canvWidth = window.innerWidth - 20;
+
   return (
     <div className="LOC flex flex-col h-screen">
+    
       <Fab
         icon={<MdAdd color="white" size={20} />} // main icon
         alwaysShowTitle={true} // always show color
@@ -24,12 +28,16 @@ function LineOfCode() {
         mainButtonStyles={{ backgroundColor: "gray", width: 35, height: 35 }}
       >
         <Action
-          text="Email"
+          text="UAE CODES"
           style={{ backgroundColor: "gray", width: 35, height: 35 }}
-        />
+          onClick={() => window.location.replace("https://ai.gov.ae/uaecodes/")}
+        >
+          <MdCode />
+        </Action>
         <Action
           text="Help"
           style={{ backgroundColor: "gray", width: 35, height: 35 }}
+          onClick={() => alert("Type any words to see them displayed in the console, this is called a print statement")}
         >
           <MdHelp />
         </Action>
@@ -54,7 +62,7 @@ function LineOfCode() {
           <MatrixCard
             id={"my-id-1"}
             matrixText={"UAE CODES"}
-            canvasSize={{ width: '900', height: '300' }}
+            canvasSize={{ width: canvWidth, height: "300" }}
             delay={40}
             backgroundColor={"rgba(42, 40, 45, 0.2)"}
             textFontSize={"16"}
@@ -66,7 +74,14 @@ function LineOfCode() {
               "#A9A9A9",
               "#C0C0C0",
             ]}
-            styleOverrideForChildrenDiv={{ "background-color": "transparent", "top": "0px", "margin": "0px", "padding": "0px", "left": "0px" }}
+            styleOverrideForChildrenDiv={{
+              "background-color": "transparent",
+              top: "0px",
+              margin: "0px",
+              padding: "0px",
+              left: "0px",
+              right: "0px",
+            }}
           >
             <div>
               <Typewriter
@@ -75,7 +90,7 @@ function LineOfCode() {
                   autoStart: true,
                 }}
               />
-              </div>
+            </div>
           </MatrixCard>
         </div>
       </div>
