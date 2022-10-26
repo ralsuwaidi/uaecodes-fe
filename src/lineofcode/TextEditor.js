@@ -2,7 +2,7 @@ import { Label, TextInput } from "flowbite-react";
 
 export default function TextEditor() {
   return (
-    <div class="flex px-2 text-sm loc-mono Comment">
+    <div class="flex px-2 text-sm loc-mono Comment sm:text-xs">
       <div class="w-1/5">
         {Array.from(Array(25), (e, i) => {
           return <p>{i + 1}</p>;
