@@ -38,18 +38,22 @@ export default function TextEditor() {
         <br></br>
         <p># add the line you want to print inside the “” marks </p>
         <br></br>
-        <p className="Foreground">
-          <span className="Green">print</span>
-          <span>(</span>
-          <span className="Yellow">"</span>
-          <input
-            type="text"
-            id="small-input"
-            class="p-2 Yellow bg-gray-900 rounded-lg border border-gray-900 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
-          />
-          <span className="Yellow">"</span>
-          <span>)</span>
-        </p>
+        <div className="flex items-center mt-2">
+          <div>
+            <span className="Green">print</span>
+            <span>(</span>
+            <span className="Yellow">"</span>
+          </div>
+            <input
+              type="text"
+              id="small-input"
+              class=" Yellow bg-gray-900 flex-1 rounded-lg border border-gray-900 sm:text-xs focus:ring-blue-500 focus:border-blue-500 "
+            />
+          <div>
+            <span className="Yellow">"</span>
+            <span>)</span>
+          </div>
+        </div>
       </div>
     </div>
   );
